@@ -1,0 +1,63 @@
+{
+ "total": 38.48,
+ "frames": 1154,
+ "segments": [
+  {
+   "id": "intro",
+   "start": 0.0,
+   "dur": 5.54,
+   "step": null,
+   "vo": "Chceš mít na profilu v e-learningu i svoje zájmy? Ukážu ti, jak na to."
+  },
+  {
+   "id": "s1",
+   "start": 5.54,
+   "dur": 5.36,
+   "step": "Otevři svůj profil",
+   "vo": "Vpravo nahoře klikni na svoje iniciály a v nabídce vyber Profil."
+  },
+  {
+   "id": "s2",
+   "start": 10.9,
+   "dur": 3.58,
+   "step": "Upravit profil",
+   "vo": "Na stránce profilu klikni na Upravit profil."
+  },
+  {
+   "id": "s3",
+   "start": 14.47,
+   "dur": 5.23,
+   "step": "Rozbal sekci Zájmy",
+   "vo": "Sjeď níž a rozbal sekci Zájmy."
+  },
+  {
+   "id": "s4",
+   "start": 19.7,
+   "dur": 6.67,
+   "step": "Napiš svůj zájem",
+   "vo": "Do pole napiš, co tě baví. Třeba běh."
+  },
+  {
+   "id": "s5",
+   "start": 26.37,
+   "dur": 3.01,
+   "step": "Ulož změny",
+   "vo": "Nakonec klikni na Aktualizovat profil."
+  },
+  {
+   "id": "s6",
+   "start": 29.38,
+   "dur": 5.9,
+   "step": null,
+   "vo": "A je to. Tvůj zájem se teď zobrazuje na profilu."
+  },
+  {
+   "id": "outro",
+   "start": 35.28,
+   "dur": 3.2,
+   "step": null,
+   "vo": null
+  }
+ ],
+ "source_seconds": 56.4
+}
