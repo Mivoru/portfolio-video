@@ -29,3 +29,15 @@ Requirements: Python with `playwright` and `pillow`, ffmpeg on PATH, and `ELEVEN
 ## Adding a tutorial
 
 Copy `projects/zajmy.py`, then change `SOURCE`, the texts, `blur_rects()` and `SEGMENTS`. Coordinates are in recording pixels. A time written as `"s16.7"` is a time in the source recording, and a plain number is seconds from the start of the segment.
+
+## Site
+
+`docs/` is published with GitHub Pages at https://mivoru.github.io/portfolio-video/ (Czech) and `/en/` (English).
+
+```
+python tools/build.py zajmy --docs      # Czech media into docs/media/
+python tools/build.py zajmy_en --docs   # English media into docs/media/en/
+python tools/site.py                    # both pages from one template
+```
+
+`projects/zajmy_en.py` reuses the Czech spec and swaps only the texts and the voice.

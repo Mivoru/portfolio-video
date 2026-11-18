@@ -77,17 +77,17 @@ def duration(path):
 
 # ---------------------------------------------------------------- audio assets
 
-def voice(text):
+def voice(text, voice_id=VOICE_ID, lang="cs"):
     """Voice-over line with word timings, cached by text and settings."""
     settings = {"stability": 0.5, "similarity_boost": 0.8, "style": 0.15,
                 "use_speaker_boost": True, "speed": 1.05}
-    key = digest(text, VOICE_ID, VOICE_MODEL, settings)
+    key = digest(text, voice_id, VOICE_MODEL, settings)
     mp3, meta = CACHE / f"vo_{key}.mp3", CACHE / f"vo_{key}.json"
     if not mp3.exists():
         print(f"  voice: {text}")
-        raw = post(f"/v1/text-to-speech/{VOICE_ID}/with-timestamps?output_format=mp3_44100_128",
+        raw = post(f"/v1/text-to-speech/{voice_id}/with-timestamps?output_format=mp3_44100_128",
                    {"text": text, "model_id": VOICE_MODEL, "voice_settings": settings,
-                    "language_code": "cs"})
+                    "language_code": lang})
         data = json.loads(raw)
         mp3.write_bytes(base64.b64decode(data["audio_base64"]))
         meta.write_text(json.dumps(data["alignment"], ensure_ascii=False), encoding="utf-8")
@@ -150,7 +150,7 @@ def build_timeline(spec):
         s["start"] = t
         video = sum(piece_len(p) for p in s.get("pieces", []))
         if s.get("vo"):
-            s["vo_file"], words, vo_dur = voice(s["vo"])
+            s["vo_file"], words, vo_dur = voice(s["vo"], getattr(spec, "VOICE_ID", VOICE_ID), getattr(spec, "LANG", "cs"))
             s["words"] = [{**w, "s": w["s"] + t + s["vo_at"], "e": w["e"] + t + s["vo_at"]} for w in words]
             need = s["vo_at"] + vo_dur + 0.45
         else:
@@ -294,7 +294,7 @@ def mix(spec, segs, ev, total, out_wav):
 
 def render_docs(spec, segs, ev, total, at, raw):
     """Step images (no captions), before/after pair, poster, filmstrip and timeline data for docs/."""
-    docs = ROOT / "docs" / "media"
+    docs = ROOT / getattr(spec, "DOCS_DIR", "docs/media")
     docs.mkdir(parents=True, exist_ok=True)
     nframes = len(list(raw.glob("*.jpg")))
     shots = []

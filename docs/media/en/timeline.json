@@ -1,0 +1,63 @@
+{
+ "total": 38.45,
+ "frames": 1153,
+ "segments": [
+  {
+   "id": "intro",
+   "start": 0.0,
+   "dur": 5.72,
+   "step": null,
+   "vo": "Want your interests to show on your e-learning profile? Here's how to add one."
+  },
+  {
+   "id": "s1",
+   "start": 5.72,
+   "dur": 5.36,
+   "step": "Open your profile",
+   "vo": "In the top right corner, click your initials, then choose Profile."
+  },
+  {
+   "id": "s2",
+   "start": 11.08,
+   "dur": 3.46,
+   "step": "Edit profile",
+   "vo": "On your profile page, click Edit profile."
+  },
+  {
+   "id": "s3",
+   "start": 14.54,
+   "dur": 5.23,
+   "step": "Expand Interests",
+   "vo": "Scroll down and expand the Interests section."
+  },
+  {
+   "id": "s4",
+   "start": 19.77,
+   "dur": 6.67,
+   "step": "Type an interest",
+   "vo": "Type in something you enjoy. Here, it's running."
+  },
+  {
+   "id": "s5",
+   "start": 26.43,
+   "dur": 2.92,
+   "step": "Save changes",
+   "vo": "Finally, click Update profile."
+  },
+  {
+   "id": "s6",
+   "start": 29.35,
+   "dur": 5.9,
+   "step": null,
+   "vo": "That's it. Your interest now shows on your profile."
+  },
+  {
+   "id": "outro",
+   "start": 35.25,
+   "dur": 3.2,
+   "step": null,
+   "vo": null
+  }
+ ],
+ "source_seconds": 56.4
+}
